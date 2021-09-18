@@ -2,8 +2,8 @@ package com.anurag;
 
 public class OrderAgnosticBs{
     public static void main(String[] args) {
-        int arr[] = {1,3,5,9,22,25,85,95,100};
-        int target = 22;
+        int arr[] = {100,96,78,52,44,33,22};
+        int target = 78;
         int resultss =orderAgnosticBs(arr , target);
         System.out.println(resultss);
 
@@ -17,7 +17,7 @@ public class OrderAgnosticBs{
         //find wheather the array is ascending or not
 
         boolean isAsc;
-        if (start < end) {
+        if (arr[start] < arr[end]) {
             isAsc = true;
         } else {
             isAsc = false;
