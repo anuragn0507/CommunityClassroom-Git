@@ -1,6 +1,6 @@
 package com.anurag.interfaces;
 
-public class CDPlayer implements Media{
+public class CDPlayer extends Car implements Media, Brake {
 
 
     @Override
