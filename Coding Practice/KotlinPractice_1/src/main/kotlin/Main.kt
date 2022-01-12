@@ -1,5 +1,5 @@
 fun main(){
-    var name:String
+    var name
     name ="Anurag"
     println(name)
 }

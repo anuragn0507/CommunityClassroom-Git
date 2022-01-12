@@ -12,7 +12,7 @@ interface HumanEat{
 }
 
 class Being implements AnimalEat, HumanEat{
-    public static void eat(){
+    public void eat(){
         System.out.println("Animal is eating");
 
     }
@@ -25,7 +25,7 @@ public class MultipleInehri {
                 AnimalEat.super.eat();
             }
         };
-        Being.eat();
+
 
     }
 
