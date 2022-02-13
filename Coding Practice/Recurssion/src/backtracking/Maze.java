@@ -9,17 +9,17 @@ public class Maze {
 //        System.out.println(pathRet("",3,3));
 //        System.out.println(pathDiagonal("",3,3));
 
-        boolean[][] board ={
+        boolean[][] board = {
                 {true, true, true},
                 {true, false, true},
                 {true, true, true}
         };
 
-        pathRestrictions("", board,0,0);
+        pathRestrictions("", board, 0, 0);
 
     }
 
-    static int count(int r,int c) {
+    static int count(int r, int c) {
         if (r == 1 || c == 1) {
             return 1;
         }
@@ -28,17 +28,17 @@ public class Maze {
         return left + right;
     }
 
-    static void path(String p, int r,int c) {
+    static void path(String p, int r, int c) {
         // Make a note of it when you want to print whole path
         // then in base case you have to use && both R and C should have 1
         if (r == 1 && c == 1) {
             System.out.println(p);
             return;
         }
-        if(r > 1) {
+        if (r > 1) {
             path(p + 'D', r - 1, c);
         }
-        if(c > 1) {
+        if (c > 1) {
             path(p + 'R', r, c - 1);
         }
     }
@@ -53,10 +53,10 @@ public class Maze {
         }
 
         ArrayList<String> list = new ArrayList<>();
-        if(r > 1) {
+        if (r > 1) {
             list.addAll(pathRet(p + 'D', r - 1, c));
         }
-        if(c > 1) {
+        if (c > 1) {
             list.addAll(pathRet(p + 'R', r, c - 1));
         }
         return list;
@@ -72,39 +72,41 @@ public class Maze {
         }
 
         ArrayList<String> list = new ArrayList<>();
-        if(r > 1 && c>1) {
-            list.addAll(pathDiagonal(p + 'D', r - 1, c-1));
+        if (r > 1 && c > 1) {
+            list.addAll(pathDiagonal(p + 'D', r - 1, c - 1));
         }
 
-        if(r > 1) {
+        if (r > 1) {
             list.addAll(pathDiagonal(p + 'V', r - 1, c));
         }
-        if(c > 1) {
+        if (c > 1) {
             list.addAll(pathDiagonal(p + 'H', r, c - 1));
         }
         return list;
     }
 
-    static void pathRestrictions(String p, boolean[][] maze , int r,int c) {
+    static void pathRestrictions(String p, boolean[][] maze, int r, int c) {
         // Make a note of it when you want to print whole path
         // then in base case you have to use && both R and C should have 1
 
-        if (r == maze.length-1 && c == maze[0].length-1) { // if you don't have any
+        //checkout video for this at 40:00 min time stamp in the given video link
+        //https://www.youtube.com/watch?v=zg5v2rlV1tM&list=PL9gnSGHSqcnp39cTyB1dTZ2pJ04Xmdrod&index=10
+
+        if (r == maze.length - 1 && c == maze[0].length - 1) { // if you don't have any
             // what is maze.length & maze[0].length
             System.out.println(p);
             return;
         }
-        if(!maze[r][c]){
+        if (!maze[r][c]) {
             return;
         }
 
-        if(r < maze.length-1) {
-            pathRestrictions(p + 'D', maze,r + 1, c);
+        if (r < maze.length - 1) {
+            pathRestrictions(p + 'D', maze, r + 1, c);
         }
-        if(c < maze[0].length- 1) {
-            pathRestrictions(p + 'R', maze ,r, c + 1);
+        if (c < maze[0].length - 1) {
+            pathRestrictions(p + 'R', maze, r, c + 1);
         }
     }
-
 }
 //commit
