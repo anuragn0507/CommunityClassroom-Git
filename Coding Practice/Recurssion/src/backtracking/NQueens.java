@@ -68,3 +68,5 @@ public class NQueens {
         }
     }
 }
+
+// practice it one more time 
