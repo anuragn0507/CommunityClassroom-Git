@@ -69,4 +69,4 @@ public class NQueens {
     }
 }
 
-// practice it one more time 
+// practice it one more 5 times
