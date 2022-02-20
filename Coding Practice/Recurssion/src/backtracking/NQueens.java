@@ -34,8 +34,8 @@ public class NQueens {
             if (board[i][col]) {
                 return false;
             }
-
         }
+
         // diagonal left
         int maxLeft = Math.min(row, col);
         for (int i = 1; i <= maxLeft; i++) {
